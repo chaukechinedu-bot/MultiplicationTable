@@ -13,6 +13,6 @@
         android:layout_height="wrap_content"
         android:hint="Answer"
         android:textSize="34sp"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="274dp" />
+        tools:layout_editor_absoluteX="149dp"
+        tools:layout_editor_absoluteY="282dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,8 @@
 package com.example.multiplicationapk
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -11,6 +13,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        val multiplyButton = findViewById<Button>(R.id.btnMultiply)
+        multiplyButton.setOnClickListener {
+            val intent = Intent(this, MultiplicationTable::class.java)
+            startActivity(intent)
+        }
+
 
         
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
