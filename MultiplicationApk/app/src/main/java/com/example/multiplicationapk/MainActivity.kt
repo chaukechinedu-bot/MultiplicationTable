@@ -3,6 +3,7 @@ package com.example.multiplicationapk
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,8 +16,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val multiplyButton = findViewById<Button>(R.id.btnMultiply)
+        val tableNumber = findViewById<EditText>(R.id.txtNumber)
         multiplyButton.setOnClickListener {
+            
             val intent = Intent(this, MultiplicationTable::class.java)
+            intent.putExtra("tableNumber",
+                tableNumber.text.toString())
             startActivity(intent)
         }
 
