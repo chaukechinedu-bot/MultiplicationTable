@@ -21,7 +21,7 @@ class MultiplicationTable : AppCompatActivity() {
         multiplicationTable.text = tableDisplay
 
         var counter = 1
-        while (counter <= 10){
+        while (counter <= 20){
             val answer = tableNumber * counter
             tableDisplay += "$tableNumber x $counter = ${answer}\n"
             counter++
