@@ -15,9 +15,18 @@ class MultiplicationTable : AppCompatActivity() {
 
         val bundle: Bundle? = intent.extras
         val tableString: String? = bundle?.getString("tablenumber")
-        val tableNumber = tableString?.toInt()
+        val tableNumber = tableString!!.toInt()
         val multiplicationTable = findViewById<TextView>(R.id.multiplicationTableTextView)
-        multiplicationTable.text = "$tableNumber x table"
+        var tableDisplay : String = "$tableNumber x table\n\n"
+        multiplicationTable.text = tableDisplay
+
+        var counter = 1
+        while (counter <= 10){
+            val answer = tableNumber * counter
+            tableDisplay += "$tableNumber x $counter = ${answer}\n"
+            counter++
+        }
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
