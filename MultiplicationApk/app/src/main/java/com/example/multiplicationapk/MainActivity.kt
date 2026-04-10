@@ -18,10 +18,12 @@ class MainActivity : AppCompatActivity() {
         val multiplyButton = findViewById<Button>(R.id.btnMultiply)
         val tableNumber = findViewById<EditText>(R.id.txtNumber)
         multiplyButton.setOnClickListener {
-            
+            //Create the explicit intent
             val intent = Intent(this, MultiplicationTable::class.java)
+            //Add the table number to the intent
             intent.putExtra("tableNumber",
                 tableNumber.text.toString())
+            //Start the next activity
             startActivity(intent)
         }
 
